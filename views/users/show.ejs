@@ -6,7 +6,6 @@
     <title>The Users Pantry</title>
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
     <h1><%=usersPage.username%></h1>
     <% usersPage.pantry.forEach((pantryItem)=>{%>
         <%= pantryItem.name %>
