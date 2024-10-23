@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Food Item</title>
+</head>
+<body>
+  <h1>Edit Food Item</h1>
+
+  <% if (pantry) { %>
+    <form action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=PUT" method="POST">
+
+      <input type="hidden" name="id" value="<%= pantry._id %>">
+
+      <label for="name">Food Name:</label>
+      <input type="text" id="name" name="name" value="<%= pantry.name %>"><br>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="<%= pantry.quantity %>"><br>
+
+      
+      <button type="submit">Update Food</button>
+    </form>
+  <% } else { %>
+    <p>Food item not found!</p>
+  <% } %>
+</body>
+</html>
